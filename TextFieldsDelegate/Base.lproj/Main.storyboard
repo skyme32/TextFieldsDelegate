@@ -1,24 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextFieldsDelegate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7tW-vh-nxc">
+                                <rect key="frame" x="32" y="76" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add the price" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aj3-oD-f0M">
+                                <rect key="frame" x="32" y="118" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pc3-TD-Cfh">
+                                <rect key="frame" x="333" y="160" width="51" height="31"/>
+                                <connections>
+                                    <action selector="toggleTextEDitor:" destination="BYZ-38-t0r" eventType="valueChanged" id="9fM-SK-HJB"/>
+                                </connections>
+                            </switch>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kM6-V8-vPM">
+                                <rect key="frame" x="32" y="160" width="293" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemGray3Color"/>
+                        <constraints>
+                            <constraint firstItem="pc3-TD-Cfh" firstAttribute="leading" secondItem="kM6-V8-vPM" secondAttribute="trailing" constant="8" id="ECs-LB-uLI"/>
+                            <constraint firstItem="aj3-oD-f0M" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Oyr-hS-gHO"/>
+                            <constraint firstItem="7tW-vh-nxc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="PGP-9u-sJh"/>
+                            <constraint firstItem="pc3-TD-Cfh" firstAttribute="top" secondItem="aj3-oD-f0M" secondAttribute="bottom" constant="8" id="SMe-yE-Xno"/>
+                            <constraint firstItem="7tW-vh-nxc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="Vil-3E-YOc"/>
+                            <constraint firstItem="kM6-V8-vPM" firstAttribute="top" secondItem="aj3-oD-f0M" secondAttribute="bottom" constant="8" id="XOL-G0-wZN"/>
+                            <constraint firstItem="kM6-V8-vPM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="Xnk-Uj-gUL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pc3-TD-Cfh" secondAttribute="trailing" constant="32" id="dLa-Um-6DV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aj3-oD-f0M" secondAttribute="trailing" constant="32" id="e2v-7b-Wcu"/>
+                            <constraint firstItem="aj3-oD-f0M" firstAttribute="top" secondItem="7tW-vh-nxc" secondAttribute="bottom" constant="8" id="hbI-tb-EmU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7tW-vh-nxc" secondAttribute="trailing" constant="32" id="vcK-jv-VH8"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textFieldColor" destination="kM6-V8-vPM" id="df5-LW-qG2"/>
+                        <outlet property="textFieldPrice" destination="aj3-oD-f0M" id="xDp-yN-mY2"/>
+                        <outlet property="textFieldZipCode" destination="7tW-vh-nxc" id="EEI-lL-Mhp"/>
+                        <outlet property="toggleButton" destination="pc3-TD-Cfh" id="PhI-gR-SaJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="100"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemGray3Color">
+            <color red="0.7803921568627451" green="0.7803921568627451" blue="0.80000000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
